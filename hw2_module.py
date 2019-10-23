@@ -42,5 +42,10 @@ def test_create_dataframe(df, colnames):
     else:
         tenRows = False
         
-    return [argNames, sameType, tenRows]
-    
+    ### function returns true if all three conditions are met ###
+    if argNames == True and sameType == True and tenRows == True:
+        func = True
+    else:
+        func = False
+        
+    return func 
