@@ -1,6 +1,5 @@
 '''
 Homework 2
-
 Jacqueline Nugent
 '''
 
@@ -15,14 +14,17 @@ def create_dataframe_url(url):
 def test_create_dataframe(df, colnames):
     
     ### test for columns ###
-    # loop through the data frame columns, and stop if any are NOT in the given list
-    for col in df.columns:
-        if col not in colnames:
-            argNames = False
-            break
-        else:
-            argNames = True
-    
+    argNames = True
+    # test if the list and dataframe have the same number of columns
+    if len(df.columns) == len(colnames):
+        # loop through the data frame columns, and stop if any are NOT in the given list
+        for col in df.columns:
+            if col not in colnames:
+                argNames = False
+                break
+    else:
+        argNames = False   
+ 
     ### test for same type within each column ###
     sameType = True
     for col in df.columns:
